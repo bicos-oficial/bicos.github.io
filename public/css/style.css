@@ -1,3 +1,8 @@
 h1,h2,h3,h4,h5,h6 { font-family: "Oswald"; }
 body { font-family: "Open Sans"; }
 criar-conta { color: white; }
+.sombra-hover:hover {
+    transition: 0.5s;
+    cursor: pointer;
+    box-shadow: 0px 0px 20px -5px grey;
+}

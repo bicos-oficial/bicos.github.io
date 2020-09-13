@@ -30,12 +30,16 @@ function alertHtml ( prTitulo, prHtml, prBotaoConfirma, prFunction ) {
 /**
  * Alerta
  */
-function alerta (prTipo, prTitulo, prTexto) {
+function alerta (prTipo, prTitulo, prTexto, prFunction) {
     
     Swal.fire({
         icon: prTipo,
         title: prTitulo,
         text: prTexto
+      }).then((result) => {
+
+        prFunction();
+
       });
 
 }

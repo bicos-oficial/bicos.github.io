@@ -21,7 +21,11 @@ function handleAccount ( prDados ) {
 
     });
 
-    if ( !erro ) alerta('success', 'Sucesso', 'Conta criada com sucesso!');
+    if ( !erro ) alerta('success', 'Sucesso', 'Conta criada com sucesso!', () => {
+
+        window.location = 'https://bicos-oficial.github.io/bicos.github.io/empregos.html';
+
+    });
     
 }
 
@@ -50,7 +54,11 @@ function handleLogin ( prDados ) {
 
     if ( !erro ) {
         
-        alerta('success', 'Sucesso', 'Logado com sucesso!');
+        alerta('success', 'Sucesso', 'Logado com sucesso!', () => {
+
+            window.location = 'https://bicos-oficial.github.io/bicos.github.io/empregos.html';
+    
+        });
         
     } else {
 
@@ -106,17 +114,47 @@ function createAccountModal () {
             html+= '</div>';
         html+= '</div>';
         html+= '<div class="form-row">';
-            html+= '<div class="form-group col-md-4">';
+            html+= '<div class="form-group col-md-12">';
                 html+= '<label for="endereco">Endereço</label>'
                 html+= '<input type="text" class="form-control" id="endereco">'
             html+= '</div>';
-            html+= '<div class="form-group col-md-4">';
+            html+= '<div class="form-group col-md-6">';
                 html+= '<label for="cidade">Cidade</label>'
                 html+= '<input type="text" class="form-control" id="cidade">'
             html+= '</div>';
-            html+= '<div class="form-group col-md-4">';
-                html+= '<label for="estado">Estado</label>'
-                html+= '<input type="text" class="form-control" id="estado">'
+            html+= '<div class="form-group col-md-6">';
+                html+= '<label for="estado">Estado</label>';
+                html+= '<select id="estado" class="form-control">';
+                    html+= '<option selected>-- Selecione --</option>';
+                    html+= '<option value="AC">Acre</option>';
+                    html+= '<option value="AL">Alagoas</option>';
+                    html+= '<option value="AP">Amapá</option>';
+                    html+= '<option value="AM">Amazonas</option>';
+                    html+= '<option value="BA">Bahia</option>';
+                    html+= '<option value="CE">Ceará</option>';
+                    html+= '<option value="DF">Distrito Federal</option>';
+                    html+= '<option value="ES">Espírito Santo</option>';
+                    html+= '<option value="GO">Goiás</option>';
+                    html+= '<option value="MA">Maranhão</option>';
+                    html+= '<option value="MT">Mato Grosso</option>';
+                    html+= '<option value="MS">Mato Grosso do Sul</option>';
+                    html+= '<option value="MG">Minas Gerais</option>';
+                    html+= '<option value="PA">Pará</option>';
+                    html+= '<option value="PB">Paraíba</option>';
+                    html+= '<option value="PR">Paraná</option>';
+                    html+= '<option value="PE">Pernambuco</option>';
+                    html+= '<option value="PI">Piauí</option>';
+                    html+= '<option value="RJ">Rio de Janeiro</option>';
+                    html+= '<option value="RN">Rio Grande do Norte</option>';
+                    html+= '<option value="RS">Rio Grande do Sul</option>';
+                    html+= '<option value="RO">Rondônia</option>';
+                    html+= '<option value="RR">Roraima</option>';
+                    html+= '<option value="SC">Santa Catarina</option>';
+                    html+= '<option value="SP">São Paulo</option>';
+                    html+= '<option value="SE">Sergipe</option>';
+                    html+= '<option value="TO">Tocantins</option>';
+                    html+= '<option value="EX">Estrangeiro</option>';
+                html+= '</select>';
             html+= '</div>';
         html+= '</div>';
         html+= '<div class="form-row">';
@@ -124,7 +162,6 @@ function createAccountModal () {
                 html+= '<label for="tipo">Tipo de conta</label>';
                 html+= '<select id="tipo" class="form-control">';
                     html+= '<option selected>-- Selecione --</option>';
-                    html+= '<option>Prestador</option>';
                     html+= '<option>Contratante</option>';
                 html+= '</select>';
             html+= '</div>';
@@ -151,19 +188,19 @@ function createAccountModal () {
                 valor : document.getElementById('email').value
             },
             endereco    : {
-                label : 'Email',
+                label : 'Endereço',
                 valor : document.getElementById('endereco').value
             },
             cidade      : {
-                label : 'Email',
+                label : 'Cidade',
                 valor : document.getElementById('cidade').value
             },
             estado      : {
-                label : 'Email',
+                label : 'Estado',
                 valor : document.getElementById('estado').value
             },
             tipo        : {
-                label : 'Email',
+                label : 'Tipo de conta',
                 valor : document.getElementById('tipo').value
             },
         };
